@@ -14,35 +14,45 @@
     <div class="container">
       <h1>Address Book</h1>
       <p>get you some addresses in this lil digital book my dude</p>
+      <div class="row">
+        <div class="col-md-6">
+          <hr>
+          <h2>Add a Contact</h2>
+          <form id="formy">
+            <div class="form-group">
+              <label for="new-first-name">first name</label>
+              <input type="text" id="new-first-name"> <br>
+            </div>
+            <div class="form-group">
+              <label for="new-last-name">last name</label>
+              <input type="text" id="new-last-name"> <br>
+            </div>
+            <div class="form-group">
+              <label for="new-phone-number">the numba</label>
+              <input type="text" id="new-phone-number"><br>
+            </div>
+            <button type="submit">Lets Go</button>
+          </form>
 
-      <h2>Add a Contact</h2>
-      <form id="formy">
-        <div class="form-group">
-          <label for="new-first-name">first name</label>
-          <input type="text" id="new-first-name"> <br>
+          <h2>Contacts</h2>
+          <ul id="contacts">
+
+          </ul>
         </div>
-        <div class="form-group">
-          <label for="new-last-name">last name</label>
-          <input type="text" id="new-last-name"> <br>
+        <div class="col-md-6">
+          <div id="show-contact">
+            <p>First Name: <span class="first-name"></span></p>
+            <p>Last Name: <span class="last-name"></span></p>
+            <p>Phone Number: <span class="phone-number"></span></p>
+            <div id="buttons"></div>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="new-phone-number">the numba</label>
-          <input type="text" id="new-phone-number"><br>
-        </div>
-        <button type="submit">Lets Go</button>
-      </form>
 
-      <h2>Contacts</h2>
-      <ul is="contacts">
-
-      </ul>
-
-      <div id="show-contact">
-        <p>First Name: <span class="first-name"></span></p>
-        <p>Last Name: <span class="last-name"></span></p>
-        <p>Phone Number: <span class="phone-number"></span></p>
-        <div id="buttons"></div>
       </div>
+      
+      
+
+      
     </div>
 </body>
 </html>
