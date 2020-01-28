@@ -80,14 +80,20 @@ function showContact(contactId) {
   $(".last-name").html(contact.lastName);
   $(".phone-number").html(contact.phoneNumber);
   $(".email").html(contact.email);
-
+  var htmlString = "";
   for (var i = 0; i < contact.addresses.length; i ++) {
     if (contact.addresses[i]) {
-      $(".address").append(contact.addresses[i].addressType + ": " + contact.addresses[i].address + " ");
-    }
+      if (contact.addresses[i].address === "") {
+        var line = $("p#" + i + "")
+        line.hide();
+        console.log('second iffed')
+      } else {
+        htmlString += ('<p id="' + i +'">' + contact.addresses[i].addressType + ": " + contact.addresses[i].address + "</p>");
+        console.log(contact.addresses[i].address)
+      }
+    } 
   }
-  
-
+  $(".address").html(htmlString);
   var buttons = $("div#buttons");
   buttons.empty();
   buttons.append("<button class='deleteButton' id=" + contact.id + ">Delete Contact</button>");
@@ -122,9 +128,12 @@ $(document).ready(function() {
 
     var addresses = [ inputtedAddress, inputtedAddress2, inputtedAddress3];
     var type = [ addressType, addressType2, addressType3];
+    
+    var newContact = new Contact(inputtedFirstName, inputtedLastName, inputtedPhoneNumber, inputtedEmail);
 
     for (var i = 0; i < 3; i++) {
-      var newAddress = new Address ()
+      var newAddress = new Address (addresses[i], type[i])
+      newContact.addAddress(newAddress)
     }
 
     $("input#new-first-name").val("");
@@ -132,14 +141,15 @@ $(document).ready(function() {
     $("input#new-phone-number").val("");
     $("input#new-email").val("");
     $("input#new-address").val("");
+    $("input#new-address2").val("");
+    $("input#new-address3").val("");
 
-    var newAddress = new Address(inputtedAddress, addressType);
-    var newAddress2 = new Address(inputtedAddress2, addressType2);
-    var newAddress3 = new Address(inputtedAddress3, addressType3);
-    var newContact = new Contact(inputtedFirstName, inputtedLastName, inputtedPhoneNumber, inputtedEmail);
-    newContact.addAddress(newAddress);
-    newContact.addAddress(newAddress2);
-    newContact.addAddress(newAddress3);
+    // var newAddress = new Address(inputtedAddress, addressType);
+    // var newAddress2 = new Address(inputtedAddress2, addressType2);
+    // var newAddress3 = new Address(inputtedAddress3, addressType3);
+    // newContact.addAddress(newAddress);
+    // newContact.addAddress(newAddress2);
+    // newContact.addAddress(newAddress3);
     addressBook.addContact(newContact);
     displayContactDetails(addressBook);
   })
