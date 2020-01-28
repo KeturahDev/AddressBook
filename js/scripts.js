@@ -69,42 +69,33 @@ function showContact(contactId) {
   $(".phone-number").html(contact.phoneNumber);
   var buttons = $("div#buttons");
   buttons.empty();
-  buttons.append("<button class='deleteButton' id=" + contact.id + ">Delete Contact</button>")
+  buttons.append("<button class='deleteButton' id=" + contact.id + ">Delete Contact</button>");
 }
 
 function attachContactListeners() {
   $("ul#contacts").on("click", "li", function() {
     showContact(this.id);
-  })
+  });
   $("div#buttons").on("click", ".deleteButton", function() {
     addressBook.deleteContact(this.id);
     $("#show-contact").hide();
     displayContactDetails(addressBook);
-  })
+  });
 }
 
 $(document).ready(function() {
   attachContactListeners();
   $('#formy').submit(function(event) {
     event.preventDefault();
-
     var inputtedFirstName = $('#new-first-name').val();
     var inputtedLastName = $('#new-last-name').val();
     var inputtedPhoneNumber = $('#new-phone-number').val();
-
+    $("input#new-first-name").val("");
+    $("input#new-last-name").val("");
+    $("input#new-phone-number").val("");
     var newContact = new Contact ( inputtedFirstName, inputtedLastName, inputtedPhoneNumber);
     addressBook.addContact(newContact);
     displayContactDetails(addressBook);
   })
 })
-
-
-
-
-
-// var contact = new Contact("Ada", "Lovelace", "503-555-0100");
-// var contact2 = new Contact("Grace", "Hopper", "503-555-0199");
-// addressBook.addContact(contact);
-// addressBook.addContact(contact2);
-
 
