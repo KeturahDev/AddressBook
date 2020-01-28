@@ -1,13 +1,12 @@
 # Address Book
-By Keturah Howard, Sommer Howe, January 24th 2020
+By Keturah Howard, Jamison Cozart, January 24th 2020
 
 ## Description
   
+_Address book that displays a list of names in your contact, that displays emails, names, and phone numbers for each contact clicked on._
 
 ## Behavioral Driven Development
   *Heres a list of the specific behaviors I wanted to be acheived throughout the development process, starting from most basic to complex.*
-
-
 
 ## Set Up 
   To set up you can simply interact with the webpage by clicking [here](https://keturahdev.github.io//) to access the gh-pages for this repository. Or! To view the code and in Visual Studio and all that jazz, follow the steps bellow. 
@@ -32,4 +31,4 @@ There are currently no known bugs, however, if there are any issues running this
 
 ## Legal
 
-Copyright (c) 2020 Keturah D Howard and Sommer Howe.
+Copyright (c) 2020 Keturah D Howard and Jamison Cozart.
