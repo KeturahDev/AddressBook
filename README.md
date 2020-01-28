@@ -8,6 +8,15 @@ _Address book that displays a list of names in your contact, that displays email
 ## Behavioral Driven Development
   *Heres a list of the specific behaviors I wanted to be acheived throughout the development process, starting from most basic to complex.*
 
+  specs for *Remove any additional address fields when the form is submitted*
+
+  * user inputs only one address
+    * input: `<home address>`
+    * output: home: (address)
+  * user inputs 2 addresses
+    * input: `<home address>` , `<work address>`
+    * output: home: (address) .. work: (address)
+
 ## Set Up 
   To set up you can simply interact with the webpage by clicking [here](https://keturahdev.github.io//) to access the gh-pages for this repository. Or! To view the code and in Visual Studio and all that jazz, follow the steps bellow. 
   1. Click on the *clone or download* button of this repository. You can download the project file clicking the **"Download Zip"** button, double clicking the file in downloads, and navigating to the index.html file and double clicking that. *Or*, you can copy the link that pops up when you've clicked the *clone or download* button above this README.md file.

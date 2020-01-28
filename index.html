@@ -35,6 +35,16 @@
                 <label for="new-email">email address</label>
                 <input type="text" id="new-email" placeholder="johndoe@example.com"><br>
               </div>
+            <div class="form-group">
+                <label for="new-address">physical address</label>
+                <input type="text" id="new-address"> 
+                <select name="adress-type" id="address-type">
+                  <option value="work">work</option>
+                  <option value="home">home</option>
+                  <option value="other">other</option>
+                </select>
+                <br>
+              </div>
             <button type="submit">Lets Go</button>
           </form>
 
@@ -49,6 +59,7 @@
             <p>Last Name: <span class="last-name"></span></p>
             <p>Phone Number: <span class="phone-number"></span></p>
             <p>Email: <span class="email"></span></p>
+            <p>Address: <span class="address"></span></p>
             <div id="buttons"></div>
           </div>
         </div>
